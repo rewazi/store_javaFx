@@ -1,0 +1,44 @@
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Label?>
+<VBox fx:id="vbMenuFormRoot" maxHeight="-Infinity" maxWidth="-Infinity"
+      minHeight="-Infinity" minWidth="-Infinity" prefHeight="45.0" prefWidth="599.0"
+      xmlns="http://javafx.com/javafx/23.0.1"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.example.demo.controller.MenuFormController">
+    <children>
+        <MenuBar>
+            <menus>
+                <Menu fx:id="menuProducts" mnemonicParsing="false" text="Продукты">
+                    <items>
+                        <MenuItem fx:id="showProductFormMenu" mnemonicParsing="false" onAction="#showProductForm" text="Добавить продукт" />
+                        <MenuItem fx:id="showBrandFormMenu" mnemonicParsing="false" onAction="#showBrandForm" text="Добавить бренд" />
+                        <MenuItem mnemonicParsing="false" text="Список продуктов" />
+                    </items>
+                </Menu>
+                <Menu fx:id="menuCustomers" mnemonicParsing="false" text="Покупатели">
+                    <items>
+                        <MenuItem fx:id="showCustomerFormMenu" mnemonicParsing="false" onAction="#showCustomerForm" text="Добавить покупателя" />
+                        <MenuItem fx:id="showCustomerTableMenu" mnemonicParsing="false" onAction="#showCustomerTable" text="Список покупателей" />
+                    </items>
+                </Menu>
+                <Menu fx:id="menuAdministrator" mnemonicParsing="false" text="Administrator">
+                    <items>
+                        <MenuItem fx:id="showAdministratorMenuItem" mnemonicParsing="false" text="Administrator Options" />
+                    </items>
+                </Menu>
+                <Menu fx:id="menuUser" mnemonicParsing="false" text="Пользователь">
+                    <items>
+
+                        <MenuItem fx:id="logoutMenuItem" mnemonicParsing="false" onAction="#logout" text="Выход" />
+                        <MenuItem fx:id="profileMenuItem" mnemonicParsing="false"  onAction="#showProfileForm" text="Профиль" />
+                    </items>
+                </Menu>
+            </menus>
+        </MenuBar>
+        <Label alignment="CENTER" prefHeight="17.0" prefWidth="600.0" />
+    </children>
+</VBox>
+
