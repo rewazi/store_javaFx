@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox fx:id="vbPurchaseProductRoot" prefHeight="200.0" prefWidth="300.0"
+      xmlns="http://javafx.com/javafx/23.0.1"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.example.demo.controller.PurchaseProductController">
+    <children>
+        <Label alignment="CENTER" prefHeight="60.0" prefWidth="300.0" text="Покупка товара">
+            <font>
+                <Font size="18.0"/>
+            </font>
+        </Label>
+        <HBox spacing="10" alignment="CENTER_LEFT">
+            <Label text="Количество для покупки:"/>
+            <TextField fx:id="tfQuantity" prefWidth="200"/>
+        </HBox>
+        <HBox spacing="10" alignment="CENTER">
+            <Button text="Купить" onAction="#purchaseProduct"/>
+            <Button text="Отмена" onAction="#closeDialog"/>
+        </HBox>
+    </children>
+    <padding>
+        <Insets top="20" bottom="20" left="20" right="20"/>
+    </padding>
+</VBox>

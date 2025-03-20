@@ -20,7 +20,7 @@
         </TableView>
         <HBox fx:id="hbEditProduct" alignment="CENTER_RIGHT" prefHeight="26.0" prefWidth="600.0" visible="false">
             <children>
-                <Button mnemonicParsing="false" onAction="#showEditProductForm" text="Редактировать продукт" />
+                <Button fx:id="showEditProductForm" mnemonicParsing="false" onAction="#showEditProductForm" text="Редактировать продукт" />
             </children>
         </HBox>
     </children>

@@ -1,9 +1,11 @@
 package com.example.demo.controller;
 
+import com.example.demo.model.entity.Product;
 import com.example.demo.service.FormService;
 import com.example.demo.service.StoreUserService;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuItem;
 import org.springframework.stereotype.Component;
@@ -29,9 +31,11 @@ public class MenuFormController implements Initializable {
     @FXML private MenuItem logoutMenuItem;
     @FXML private MenuItem profileMenuItem;
 
+
     public MenuFormController(FormService formService) {
         this.formService = formService;
     }
+
 
     @FXML private void showProductForm() {
         formService.loadNewProductForm();

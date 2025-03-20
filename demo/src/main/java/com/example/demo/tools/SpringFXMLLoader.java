@@ -14,13 +14,12 @@ public class SpringFXMLLoader {
     }
 
     public FXMLLoader load(String fxmlPath) {
-        // Попытка получить URL ресурса по указанному пути
         java.net.URL resource = getClass().getResource(fxmlPath);
         if (resource == null) {
             throw new IllegalStateException("FXML-файл не найден по пути: " + fxmlPath);
         }
         FXMLLoader fxmlLoader = new FXMLLoader(resource);
-        fxmlLoader.setControllerFactory(applicationContext::getBean);
+        fxmlLoader.setControllerFactory(applicationContext::getBean);  // Использование Spring для загрузки контроллера
         return fxmlLoader;
     }
 }

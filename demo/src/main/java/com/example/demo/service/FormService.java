@@ -3,12 +3,14 @@ package com.example.demo.service;
 import com.example.demo.ElectronicsStoreApplication;
 import com.example.demo.controller.CustomerFormController;
 import com.example.demo.controller.EditProductFormController;
+import com.example.demo.controller.PurchaseProductController;
 import com.example.demo.model.entity.Product;
 import com.example.demo.model.entity.StoreUser;
 import com.example.demo.tools.SpringFXMLLoader;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import org.springframework.stereotype.Service;
 
@@ -73,6 +75,19 @@ public class FormService {
         EditProductFormController controller = fxmlLoader.getController();
         controller.setEditProduct(product);
         setScene(root, "Electronics Store - Edit Product");
+    }
+
+    public void loadPurchaseProductForm(Product product) {
+        FXMLLoader fxmlLoader = springFXMLLoader.load("/purchase/purchaseProductForm.fxml");
+        Parent root = loadRoot(fxmlLoader);
+        PurchaseProductController controller = fxmlLoader.getController();
+        controller.setProduct(product);
+
+        Stage stage = new Stage();
+        stage.setTitle("Покупка товара");
+        stage.setScene(new Scene(root));
+        stage.initModality(Modality.APPLICATION_MODAL);  // Это делает окно модальным
+        stage.showAndWait();
     }
 
     public void loadBrandForm() {
